@@ -1,0 +1,39 @@
+= ENV['gmail']
+.br
+= ENV['gmailp']
+
+.container
+  %form{:id => 'newExpensesForm', :method => 'POST', :action => '/application/create_ledger', :class => 'form-grp'}
+    %h1 New Ledger
+    .box
+      .header
+        %h2 Phone Number
+        .info
+          The number from which you will file expenses
+      .content
+        %input{:type => 'tel', :name => 'phone_number'}
+
+    .box
+      .header
+        %h2 Project Name
+        .info
+          The name of the ledger spreadsheet
+      .content
+        %input{:type => 'text', :name => 'project_name'}
+
+    .box
+      .header
+        %h2 Email Address
+        .info
+          The owner of the spreadsheet
+      .content
+        %input{:type => 'email', :name => 'email'}
+
+
+    %button{:type => 'submit', :class => 'big-button'} Create ledger
+
+    = render :partial => 'help_email'
+
+    .notice
+      %p
+        != flash[:notice]
