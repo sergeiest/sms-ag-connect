@@ -1,0 +1,64 @@
+<div class="title-name">
+  <h3>AgConnect: Marketplace for farmers (<a href="http://bit.ly/1gEv0Lr" >Learn more...</a>)</h3>
+</div>
+
+<div class="main-div">
+    <h3>
+      Web interface - test the system<br/>
+      <i>(to use sms interface send sms to number +1.510.730.3599, works only with registered numbers. To register, please contact sergey.astretsov@gmail.com)</i>
+    </h3>
+
+
+    <br/><br/>
+
+    <b>Type your 'sms' here:</b><br/>
+
+    <%= form_tag({:action => "send_web_sms"}) do%>
+        <%= text_field_tag :Body, "", :style => "width:100%" %>
+        <%= select_tag :From,
+            "<option>650-111-1111</option><option>650-222-2222</option><option>650-333-3333</option><option>650-444-4444</option>".html_safe%>
+        <%= submit_tag "Send"%>
+    <% end %>
+
+    <br/><br/><hr/><br/><br/>
+
+
+    <b>Here is your previous message:</b><br/>
+    <%= params[:Body] %><br/><br/>
+
+    <b>From number:</b><br/>
+    <%= params[:From] %>
+
+    <br/><br/>
+
+    <b>Here is the response: </b><br/>
+    <%= @response_text %>
+</div>
+
+<div class="help-div">
+  <h3>List of commands:</h3>
+  <p></p><i>Register a new user: </i><br><span>register * Name * Location</span></p>
+  <p><i>Add information about inventory: </i><br/><span>inventory * Product * Quantity * Date ready </span></p>
+  <p><i>Add information about a deal: </i><br/><span>deal * Product * Quantity * Price * Date </span></p>
+  <p><i>Request information about previous deals: </i><br/><span>history * Product </span></p>
+  <p><i>Request information about available inventory: </i><br/><span>buy * Product </span></p>
+  <p><i>Get help menu: </i><br/><span>help or any other text</span></p>
+  <br/>
+  <h3>Google documents:</h3>
+  <table>
+    <tr>
+      <td>Users:</td>
+      <td><a href="https://docs.google.com/spreadsheet/ccc?key=0AlUoRDmGLnH9dHpCa0lJdHdtY1NOWmFvdjN4aS14ekE&usp=sharing">testing_users</a></td>
+    </tr>
+    <tr>
+      <td>Inventory:</td>
+      <td><a href="https://docs.google.com/spreadsheet/ccc?key=0AlUoRDmGLnH9dDl0Ym5KcDE1dUF4a1cweE5VY3JMbXc&usp=sharing">testing_inventory</a></td>
+    </tr>
+    <tr>
+      <td>Deals:</td>
+      <td><a href="https://docs.google.com/spreadsheet/ccc?key=0AlUoRDmGLnH9dDk3REMwenlPZFVjYmtpczNfRElCRnc&usp=sharing">testing_deals</a></td>
+    </tr>
+  </table>
+
+
+</div>

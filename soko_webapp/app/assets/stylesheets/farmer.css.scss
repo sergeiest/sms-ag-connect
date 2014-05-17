@@ -1,0 +1,45 @@
+// Place all the styles related to the farmer controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main-div {
+  width: 40%;
+  padding:0 5%;
+  position:absolute;
+  left:0;
+  top:80px;
+
+  i {
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
+
+.help-div {
+  width: 40%;
+  padding:0 5%;
+  position:absolute;
+  right:0;
+  top:80px;
+
+  span {
+    margin-left:40px;
+  }
+
+  td {
+    min-width:100px;
+  }
+}
+
+.title-name {
+  width:100%;
+  padding: 2px 0;
+  text-align: center;
+  border-bottom:3px solid #c3ffd7;
+  //background-color: #c3ffd7;
+
+  a {
+    font-weight: normal;
+    font-size: 16px;
+  }
+}
